@@ -1,67 +1,24 @@
-# Proyecto ETL - Actividades_Fase1
+# Actividad ETL
 
-Este proyecto se desarrolla utilizando Python para la extracción, transformación y carga (ETL) de datos en SQL Server. La información procesada proviene de dos archivos CSV que contienen datos sobre los estudiantes admitidos en el primer semestre de una universidad X, así como sus puntajes en la prueba Saber 11, obtenidos de las fuentes oficiales de datos del ICFES. El objetivo es construir una base de datos relacional en SQL Server que permita analizar y gestionar esta información de manera eficiente.
+Este proyecto realiza una serie de transformaciones y análisis en un conjunto de datos extraído de una base de datos SQL Server. Utilizando Python y bibliotecas como `pandas` y `SQLAlchemy`, el proyecto tiene como objetivo limpiar y preparar los datos para su posterior análisis y carga en una base de datos.
+
+## Descripción del Proyecto
+
+El proceso ETL (Extract, Transform, Load) consiste en extraer datos de una base de datos SQL Server, realizar diversas transformaciones y análisis, y finalmente cargar los datos transformados en una nueva tabla de la misma base de datos.
+
+El flujo de trabajo incluye las siguientes fases:
+1. **Extracción**: Conexión a la base de datos SQL Server y extracción de datos usando una consulta SQL.
+2. **Transformación**: Limpieza de datos, renombrado de columnas, conversión de tipos de datos, manejo de valores nulos y transformación de valores categóricos.
+3. **Carga**: Los datos transformados se cargan de nuevo en la base de datos bajo una nueva tabla.
 
 ## Requisitos
 
 - Python 3.x
 - pandas
-- openpyxl
-- pymssql
-- unidecode
-- numpy
-- re
+- SQLAlchemy
+- pymssql (para conectar con SQL Server)
 
-## Instalación
-
-Para instalar los paquetes necesarios, ejecuta:
+### Instalar las dependencias
 
 ```bash
-pip install pandas openpyxl pymssql unidecode numpy
-```
-
-## Descripción del Proyecto
-
-Este proyecto realiza los siguientes pasos:
-
-1. **Extracción de Datos:** Se leen dos archivos Excel con datos de estudiantes.
-2. **Transformación Inicial:**
-   - Se normalizan los nombres de las columnas eliminando tildes y caracteres especiales.
-   - Se unifican las claves para poder fusionar los datos.
-   - Se realiza una unión entre ambos DataFrames para completar la información.
-3. **Carga de Datos:**
-   - Se conecta con SQL Server.
-   - Se crea la base de datos `Actividad_ETL` si no existe.
-   - Se crea la tabla `tabla_etl_nueva1` con los datos transformados.
-   - Se insertan los registros en la tabla.
-   - Se verifican los datos almacenados.
-
-## Uso
-
-1. Clona el repositorio:
-
-```bash
-git clone https://github.com/tuusuario/proyecto_etl.git
-cd proyecto_etl
-```
-
-2. Instala las dependencias:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Ejecuta el script principal:
-
-```bash
-python etl_script.py
-```
-
-## Contribuciones
-
-¡Las contribuciones son bienvenidas! Abre un issue o envía un pull request.
-
-## Licencia
-
-Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
-
+pip install pandas sqlalchemy pymssql
