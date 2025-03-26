@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+.venv/
+.ipynb_checkpoints/
+*.egg-info/
+Thumbs.db
+Desktop.ini
+*.csv
+*.sqlite
+*.db
+.DS_Store
+*.log
+*.tmp
